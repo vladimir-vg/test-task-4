@@ -14,3 +14,46 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Contractor {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  skills      String[]
+  githubUrl   String?
+  linkedinUrl String?
+
+  createdAt   DateTime               @default(now())
+  updatedAt   DateTime               @updatedAt
+  experiences ContractorExperience[]
+  projects    ContractorProject[]
+}
+
+model ContractorExperience {
+  id           Int        @id @default(autoincrement())
+  contractorId Int
+  contractor   Contractor @relation(fields: [contractorId], references: [id])
+  company      String
+  position     String
+  description  String?
+  from         DateTime
+  to           DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContractorProject {
+  id           Int        @id @default(autoincrement())
+  contractorId Int
+  contractor   Contractor @relation(fields: [contractorId], references: [id])
+  name         String
+  description  String?
+  url          String?
+
+  from DateTime?
+  to   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

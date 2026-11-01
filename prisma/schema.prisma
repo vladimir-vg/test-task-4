@@ -16,7 +16,7 @@ model User {
 }
 
 model Contractor {
-  id          Int      @id @default(autoincrement())
+  id          String   @id @default(uuid())
   name        String
   description String?
   skills      String[]
@@ -30,8 +30,8 @@ model Contractor {
 }
 
 model ContractorExperience {
-  id           Int        @id @default(autoincrement())
-  contractorId Int
+  id           String     @id @default(uuid())
+  contractorId String
   contractor   Contractor @relation(fields: [contractorId], references: [id])
   company      String
   position     String
@@ -44,8 +44,8 @@ model ContractorExperience {
 }
 
 model ContractorProject {
-  id           Int        @id @default(autoincrement())
-  contractorId Int
+  id           String     @id @default(uuid())
+  contractorId String
   contractor   Contractor @relation(fields: [contractorId], references: [id])
   name         String
   description  String?

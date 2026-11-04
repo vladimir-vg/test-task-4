@@ -8,8 +8,6 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 
 import { AppController } from "./app.controller";
 import { PrismaService } from "./prisma.service";
-import { UsersController } from "./users.controller";
-import { UsersService } from "./users.service";
 
 import { ContractorsResolver } from './contractor.resolver';
 
@@ -26,11 +24,9 @@ import { ContractorsResolver } from './contractor.resolver';
   ],
   controllers: [
     AppController,
-    UsersController
   ],
   providers: [
     PrismaService,
-    UsersService,
     ContractorsResolver,
   ],
 })

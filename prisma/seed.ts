@@ -1,11 +1,9 @@
-import { v5 as uuidv5 } from 'uuid';
-
 import { createPrismaClient } from "../src/lib/prisma";
+import { generateUUID, VLADIMIR_CONTRACTOR_ID } from "../src/lib/utils";
 
 const prisma = createPrismaClient();
 
-const generateUUID = (seed: string) =>
-  uuidv5(seed, '3f1c2b8e-4a1d-4f6b-9c3a-7d2e5f8a9b1c')
+
 
 const contractorAttrs = {
   name: "Vladimir Gordeev",
@@ -14,6 +12,8 @@ const contractorAttrs = {
   githubUrl: "https://github.com/vladimir-vg",
   linkedinUrl: "https://www.linkedin.com/in/vladimir-g-b573a442/",
 };
+
+
 
 const experiencesAttrs = [
   {
@@ -74,6 +74,8 @@ const experiencesAttrs = [
   },
 ];
 
+
+
 const projectsAttrs = [
   {
     key: 'grasp_pl',
@@ -100,29 +102,10 @@ const projectsAttrs = [
   },
 ];
 
+
+
 async function main() {
-  // const users = await Promise.all([
-  //   prisma.user.upsert({
-  //     where: { email: "alice@prisma.io" },
-  //     update: { name: "Alice" },
-  //     create: {
-  //       email: "alice@prisma.io",
-  //       name: "Alice",
-  //     },
-  //   }),
-  //   prisma.user.upsert({
-  //     where: { email: "bob@prisma.io" },
-  //     update: { name: "Bob" },
-  //     create: {
-  //       email: "bob@prisma.io",
-  //       name: "Bob",
-  //     },
-  //   }),
-  // ]);
-
-  // console.log(`Seeded ${users.length} users.`);
-
-  const contractorId = generateUUID('contractor:vlad');
+  const contractorId = VLADIMIR_CONTRACTOR_ID;
   await prisma.contractor.upsert({
     where: { id: contractorId },
     create: { ...contractorAttrs, id: contractorId },

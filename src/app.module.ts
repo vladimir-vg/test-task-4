@@ -19,6 +19,7 @@ import { ContractorsResolver } from './contractor.resolver.js';
       driver: ApolloDriver,
       // autoSchemaFile: join(process.cwd(), 'src/generated/schema.gql'),
       autoSchemaFile: true,
+      introspection: true,
       playground: false, // Disable the legacy GraphQL Playground
       plugins: [ApolloServerPluginLandingPageLocalDefault()], // Enable Apollo Sandbox
     }),

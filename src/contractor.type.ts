@@ -26,9 +26,9 @@ export class Contractor {
   @Field(() => String, { nullable: true })
   linkedinUrl!: string | null;
 
-  @Field(() => [ContractorExperience])
-  experiences: ContractorExperience[] = [];
+  @Field(() => [ContractorExperience], { nullable: true })
+  experiences?: ContractorExperience[] = [];
 
-  @Field(() => [ContractorProject])
-  projects: ContractorProject[] = [];
+  @Field(() => [ContractorProject], { nullable: true })
+  projects?: ContractorProject[] = [];
 }

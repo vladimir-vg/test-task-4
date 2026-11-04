@@ -1,8 +1,8 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 
 
-import { ContractorExperience } from './contractor_experience.type';
-import { ContractorProject } from './contractor_project.type';
+import { ContractorExperience } from './contractor_experience.type.js';
+import { ContractorProject } from './contractor_project.type.js';
 
 
 

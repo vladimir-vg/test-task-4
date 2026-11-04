@@ -6,10 +6,10 @@ import { ApolloDriver } from '@nestjs/apollo';
 import type { ApolloDriverConfig } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 
-import { AppController } from "./app.controller";
-import { PrismaService } from "./prisma.service";
+import { AppController } from "./app.controller.js";
+import { PrismaService } from "./prisma.service.js";
 
-import { ContractorsResolver } from './contractor.resolver';
+import { ContractorsResolver } from './contractor.resolver.js';
 
 
 

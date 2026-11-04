@@ -1,11 +1,11 @@
 import { Resolver, Query, ResolveField, Parent, Mutation, Args, ID } from '@nestjs/graphql';
 import { Inject } from "@nestjs/common";
 
-import { PrismaService } from './prisma.service';
-import { Contractor } from './contractor.type';
-import { ContractorExperience } from './contractor_experience.type';
-import { ContractorProject } from './contractor_project.type';
-import { VLADIMIR_CONTRACTOR_ID } from "./lib/utils";
+import { PrismaService } from './prisma.service.js';
+import { Contractor } from './contractor.type.js';
+import { ContractorExperience } from './contractor_experience.type.js';
+import { ContractorProject } from './contractor_project.type.js';
+import { VLADIMIR_CONTRACTOR_ID } from "./lib/utils.js";
 
 
 

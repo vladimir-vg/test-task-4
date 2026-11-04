@@ -1,5 +1,11 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 
+
+import { ContractorExperience } from './contractor_experience.type';
+import { ContractorProject } from './contractor_project.type';
+
+
+
 @ObjectType()
 export class Contractor {
   @Field(() => ID)
@@ -19,4 +25,10 @@ export class Contractor {
 
   @Field(() => String, { nullable: true })
   linkedinUrl!: string | null;
+
+  @Field(() => [ContractorExperience])
+  experiences: ContractorExperience[] = [];
+
+  @Field(() => [ContractorProject])
+  projects: ContractorProject[] = [];
 }

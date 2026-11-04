@@ -17,7 +17,8 @@ import { ContractorsResolver } from './contractor.resolver';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/generated/schema.gql'),
+      // autoSchemaFile: join(process.cwd(), 'src/generated/schema.gql'),
+      autoSchemaFile: true,
       playground: false, // Disable the legacy GraphQL Playground
       plugins: [ApolloServerPluginLandingPageLocalDefault()], // Enable Apollo Sandbox
     }),

@@ -21,7 +21,7 @@ export class ContractorsResolver {
   }
 
   @ResolveField(() => [ContractorExperience])
-  async experience(@Parent() contractor: Contractor): Promise<ContractorExperience[]> {
+  async experiences(@Parent() contractor: Contractor): Promise<ContractorExperience[]> {
     return this.prisma.contractorExperience.findMany({
       where: { contractorId: contractor.id },
       orderBy: { from: 'desc' },

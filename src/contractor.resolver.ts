@@ -24,7 +24,7 @@ export class ContractorsResolver {
   async experiences(@Parent() contractor: Contractor): Promise<ContractorExperience[]> {
     return this.prisma.contractorExperience.findMany({
       where: { contractorId: contractor.id },
-      // orderBy: { from: 'desc' },
+      orderBy: { from: 'desc' },
     });
   }
 
@@ -32,7 +32,7 @@ export class ContractorsResolver {
   async projects(@Parent() contractor: Contractor): Promise<ContractorProject[]> {
     return this.prisma.contractorProject.findMany({
       where: { contractorId: contractor.id },
-      // orderBy: { from: 'desc' },
+      orderBy: { from: 'desc' },
     });
   }
 }

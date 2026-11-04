@@ -41,6 +41,8 @@ model ContractorExperience {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([contractorId, from(sort: Desc)])
 }
 
 model ContractorProject {
@@ -56,4 +58,6 @@ model ContractorProject {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([contractorId, from(sort: Desc)])
 }
